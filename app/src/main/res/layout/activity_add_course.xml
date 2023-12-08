@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.add_course.AddCourseActivity">
+
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:paddingHorizontal="20dp"
+            tools:ignore="MissingConstraints">
+            <ImageView
+                android:id="@+id/back"
+                android:layout_centerVertical="true"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:padding="2dp"
+                android:src="@drawable/ic_back"/>
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@id/back"
+                android:text="Add course"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_marginHorizontal="20dp"
+            android:layout_below="@id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="60dp">
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:hint="Enter course title"
+                    android:textColorHint="@color/grey_light"
+                    app:boxStrokeColor="@color/grey"
+                    app:hintTextColor="@color/black">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/grey_light"
+                        android:textSize="22sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:hint="Enter course description"
+                    android:textColorHint="@color/grey_light"
+                    app:boxStrokeColor="@color/grey"
+                    app:hintTextColor="@color/black">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/desc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/grey_light"
+                        android:textSize="22sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Spinner
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:id="@+id/typeOfCourse"
+                    />
+
+                <LinearLayout
+                    android:layout_marginTop="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:id="@+id/daySpinner"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1"
+                    android:gravity="center">
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.44"
+                        android:layout_height="wrap_content"
+                        android:hint="Hour"
+                        android:textColorHint="@color/grey_light"
+                        app:boxStrokeColor="@color/grey"
+                        app:hintTextColor="@color/black">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/hour"
+                            android:text="10"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/grey_light"
+                            android:textSize="22sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.09"
+                        android:text=":"
+                        android:textSize="35dp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:layout_height="wrap_content" />
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.44"
+                        android:layout_height="wrap_content"
+                        android:hint="Minute"
+                        android:textColorHint="@color/grey_light"
+                        app:boxStrokeColor="@color/grey"
+                        app:hintTextColor="@color/black">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/minute"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:text="11"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/grey_light"
+                            android:textSize="22sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.40"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:hint="Capacity*"
+                        android:textColorHint="@color/grey_light"
+                        app:boxStrokeColor="@color/grey"
+                        app:hintTextColor="@color/black">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/capacity"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:text="60"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/grey_light"
+                            android:textSize="22sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <androidx.legacy.widget.Space
+                        android:layout_width="0dp"
+                        android:layout_weight="0.02"
+                        android:layout_height="wrap_content" />
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.58"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:hint="Duration (min)*"
+                        android:textColorHint="@color/grey_light"
+                        app:boxStrokeColor="@color/grey"
+                        app:hintTextColor="@color/black">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/duration"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:text="65"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/grey_light"
+                            android:textSize="22sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:hint="Price/class (€)"
+                    android:textColorHint="@color/grey_light"
+                    app:boxStrokeColor="@color/grey"
+                    app:hintTextColor="@color/black">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/price"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:text="12"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/grey_light"
+                        android:textSize="22sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </ScrollView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/createCourse"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:cardCornerRadius="0dp"
+            app:cardBackgroundColor="@color/japanese_indigo">
+            <TextView
+                android:id="@+id/createCourseText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Create Course"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textColor="@color/white"/>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.course.CourseDetailActivity">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/courseDetail"
+                android:gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/yoga_one"
+                    android:id="@+id/exercise_image"/>
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Title | 60 min | €10"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_marginTop="3dp"
+                    android:id="@+id/desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Description will be shown here"
+                    android:textColor="@color/grey"
+                    android:textSize="16dp" />
+
+                <LinearLayout
+                    android:gravity="center_vertical"
+                    android:id="@+id/properties"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@id/desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <androidx.cardview.widget.CardView
+                        app:cardCornerRadius="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/japanese_indigo">
+                        <TextView
+                            android:paddingVertical="2dp"
+                            android:paddingHorizontal="7dp"
+                            android:id="@+id/capacity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="60dp"
+                            android:textColor="@color/white"
+                            android:textSize="14dp"
+                            android:textStyle="bold"/>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_marginStart="10dp"
+                        app:cardCornerRadius="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/japanese_indigo_variant">
+                        <TextView
+                            android:paddingVertical="2dp"
+                            android:paddingHorizontal="7dp"
+                            android:id="@+id/type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="FLOW"
+                            android:textColor="@color/white"
+                            android:textSize="14dp"
+                            android:textStyle="bold"/>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_marginStart="10dp"
+                        app:cardCornerRadius="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/indian_red">
+                        <TextView
+                            android:paddingVertical="2dp"
+                            android:paddingHorizontal="7dp"
+                            android:id="@+id/dateTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Monday - 10:00"
+                            android:textColor="@color/white"
+                            android:textSize="14dp"
+                            android:textStyle="bold"/>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_alignParentEnd="true"
+                        android:id="@+id/edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="5dp"
+                        android:text="Edit"
+                        android:textColor="@color/grey"
+                        android:textSize="16sp" />
+                    <View
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:layout_alignParentEnd="true"
+                        android:id="@+id/delete"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="5dp"
+                        android:text="Delete"
+                        android:textColor="@color/indian_red"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/courseDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/classesView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:orientation="vertical"
+                        android:paddingBottom="100dp"
+                        android:nestedScrollingEnabled="false"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/noClass"
+                        android:layout_width="wrap_content"
+                        android:layout_height="300dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="150dp"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/no_history" />
+                </RelativeLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:paddingHorizontal="20dp"
+            tools:ignore="MissingConstraints">
+            <ImageView
+                android:id="@+id/back"
+                android:layout_centerVertical="true"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:padding="2dp"
+                android:src="@drawable/ic_back"/>
+
+        </RelativeLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/createClass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/add"
+            app:backgroundTint="@color/japanese_indigo_variant"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
+</layout>

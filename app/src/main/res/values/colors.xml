@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white_transparent">#CCFFFFFF</color>
+
+    <color name="japanese_indigo">#FF283954</color>
+    <color name="japanese_indigo_variant">#BF283954</color>
+    <color name="indian_red">#FFDC5461</color>
+    <color name="indian_red_variant">#BFDC5461</color>
+
+    <color name="grey">#FF1E1E1E</color>
+    <color name="grey_light">#999999</color>
+</resources>
